@@ -1,0 +1,38 @@
+<xml id="toolbox" style="display: none">
+    <category name="Atlas" colour="60">
+        <block type="atlasimports"></block>
+        <block type="connecttoatlas"></block>
+    </category>
+    <category name="Atlas Search" colour="315">
+        <block type="createsearchindex"></block>
+    </category>
+    <category name="REST APIs" colour="0">
+        <block type="vectorize"></block>
+    </category>
+
+    <category name="Logic" colour="210">
+        <block type="controls_if"></block>
+        <block type="logic_compare"></block>
+        <block type="logic_operation"></block>
+        <block type="logic_negate"></block>
+        <block type="logic_boolean"></block>
+    </category>
+    <category name="Loops" colour="120">
+        <block type="controls_repeat_ext">
+            <value name="TIMES">
+                <block type="math_number">
+                    <field name="NUM">10</field>
+                </block>
+            </value>
+        </block>
+        <block type="controls_whileUntil"></block>
+    </category>
+    <category name="Text" colour="160">
+        <block type="text"></block>
+        <block type="text_print"></block>
+    </category>
+    <category name="Lists" colour="260">
+        <block type="lists_create_with"></block>
+    </category>
+    <category name="Variables" colour="330" custom="VARIABLE"></category>
+</xml>

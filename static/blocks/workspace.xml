@@ -1,0 +1,50 @@
+<xml xmlns="https://developers.google.com/blockly/xml" id="workspaceBlocks" style="display: none">
+    <variables>
+        <variable id="361$b1`$t9p,nUp6]3fe">connectionString</variable>
+        <variable id="q8zCe`P.Y5W(z~I1U)ee">databaseName</variable>
+        <variable id="xAk:lZkY={$ecL5SUgna">collectionName</variable>
+        <variable id="|K#7YYYC0*|puzp3,5T3">searchIndexName</variable>
+    </variables>
+    <block type="atlasimports" id="jLqj+$5M{3jK[M~Jff-!" x="38" y="12">
+        <next>
+        <block type="variables_set" id="scLisI5!o}:Kbs*@[3,y">
+            <field name="VAR" id="361$b1`$t9p,nUp6]3fe">connectionString</field>
+            <value name="VALUE">
+            <block type="text" id="LX^,OZ1XK9B4Y7zv2mmJ">
+                <field name="TEXT">mongodb+srv://</field>
+            </block>
+            </value>
+            <next>
+            <block type="variables_set" id="=s^,VH.QCwaE[ALf)++S">
+                <field name="VAR" id="q8zCe`P.Y5W(z~I1U)ee">databaseName</field>
+                <value name="VALUE">
+                <block type="text" id="vTHKC~q@@y^wnk}d#P%S">
+                    <field name="TEXT">sample_mflix</field>
+                </block>
+                </value>
+                <next>
+                <block type="variables_set" id="{5/I_K+M(RWDd!v7*:Lz">
+                    <field name="VAR" id="xAk:lZkY={$ecL5SUgna">collectionName</field>
+                    <value name="VALUE">
+                    <block type="text" id="6RXd/7?#VipIGouT*_m?">
+                        <field name="TEXT">movies</field>
+                    </block>
+                    </value>
+                    <next>
+                    <block type="variables_set" id="`MLGJLI8LRGX:ls99O.Y">
+                        <field name="VAR" id="|K#7YYYC0*|puzp3,5T3">searchIndexName</field>
+                        <value name="VALUE">
+                        <block type="text" id="J:Y-^@]P%*kBKEoT[N*b">
+                            <field name="TEXT">myIndex</field>
+                        </block>
+                        </value>
+                    </block>
+                    </next>
+                </block>
+                </next>
+            </block>
+            </next>
+        </block>
+        </next>
+    </block>
+</xml>
