@@ -1,8 +1,9 @@
-<html>
+<!doctype html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="color-scheme" content="light dark" />
+        <meta name="color-scheme" content="light" />
         
         <title>Blockly to Atlas Search Python Generator</title>
 
@@ -25,7 +26,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/python.min.js"></script>
 
-        <link rel="stylesheet" href="css/pico.min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.green.min.css" />
 
         <script>
             function init() {
@@ -97,60 +98,44 @@
             }
         </script>
     </head>
-    <body>
-        <div x-data="init()">
-            <header class="p-3 text-bg-dark">
-                <div class="container">
-                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                    <img class="bi me-2" height="32" src="/img/leaf.png" />
-                    </a>
+    <body data-theme="light">
+        <div x-data="init()" data-theme="light" class="container">
+            <nav data-theme="dark">
+                <ul>
+                    <li><img height="32" src="/img/leaf.png" style="height: 32px !important;" /></li>
+                </ul>
+                <ul>
+                    <li><input type="text" class="form-control" placeholder="Workspace ID" x-model="workspaceId"></li>
+                    <li><button class="secondary" x-on:click="loadSample">Load Sample</button></li>
+                    <li><button class="outline" x-on:click="clearClipboard">Clear Workspace</button></li>
+                    <li><button x-on:click="copyPythonToClipboard">Copy Python Code</button></li>
+                    <li><button x-on:click="copyPipToClipboard">Get PIP Packages</button></li>
+                    <li><button x-on:click="saveWorkspaceToAtlas">Save Workspace</button></li>
+                    <li><button x-on:click="loadWorkspaceFromAtlas">Load Workspace</button></li>
+                </ul>
+            </nav>
 
-                    <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-                        <input type="text" class="form-control" placeholder="Workspace ID" x-model="workspaceId">
-                    </div>
-            
-                    <div class="text-end">
-                        <button type="button" class="btn btn-warning" x-on:click="loadSample">Load Sample</button>
-                        <button type="button" class="btn btn-danger" x-on:click="clearClipboard">Clear Workspace</button>
-                        <button type="button" class="btn btn-warning" x-on:click="copyPythonToClipboard">Copy Python Code</button>
-                        <button type="button" class="btn btn-warning" x-on:click="copyPipToClipboard">Get PIP Packages</button>
-                        <button type="button" class="btn btn-success" x-on:click="saveWorkspaceToAtlas">Save Workspace</button>
-                        <button type="button" class="btn btn-success" x-on:click="loadWorkspaceFromAtlas">Load Workspace</button>
-                    </div>
-                </div>
-                </div>
-            </header>
 
-            <div class="container my-5">
-                <div class="p-5 text-center bg-body-tertiary rounded-3">
-                <h1 class="text-body-emphasis">Python Generator for Atlas Search</h1>
-                <p class="lead">
+            <article class="container-fluid" data-theme="light">
+                <h1>Python Generator for Atlas Search</h1>
+                <p>
                     So you think you're a programmer...
                 </p>
-                </div>
-            </div>
+            </article>
             
-            <div class="container text-center">
-                <div class="row">
-                    <div class="col">
-                        <h2>Drag and Drop</h2>
-                    </div>
-                    <div class="col">
-                        <h2>Python Code</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col text-start">
-                        <div id="ctr_blockly" style="height: 800px; width: 800px;"></div>
-                    </div>
-                    <div class="col text-start" style="overflow-x: scroll; overflow-y: scroll; ">
-                        <pre id="ctr_codeParent" >
-                            <code id="ctr_python" class="python" style="height: 800px;"></code>
-                        </pre>
-                    </div>
-                </div>
+            <div class="grid">
+                <article>
+                    <header><h1>Drag and Drop</h1></header>
+                    <div id="ctr_blockly" style="height: 800px;"></div>
+                </article>
+                <article>
+                    <header><h1>Python Code</h1></header>
+                    <pre id="ctr_codeParent" >
+                        <code id="ctr_python" class="python" class="overflow-auto"></code>
+                    </pre>
+                </article>
             </div>
+
         </div>
        
 <script>
