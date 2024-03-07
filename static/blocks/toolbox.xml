@@ -5,6 +5,7 @@
     </category>
     <category name="Atlas Search" colour="315">
         <block type="createsearchindex"></block>
+        <block type="searchquery"></block>
     </category>
     <category name="REST APIs" colour="0">
         <block type="vectorize"></block>

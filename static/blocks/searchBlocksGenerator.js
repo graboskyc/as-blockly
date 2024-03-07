@@ -32,7 +32,7 @@ python.pythonGenerator.forBlock['connecttoatlas'] = function(block, generator) {
   // TODO: Assemble python into code variable.
   var code = '############################\n# CREATE A CONNECTION HANDLER\n############################\n\
 client = pymongo.MongoClient('+value_connstring+')\n\
-handle = client[\''+value_db+'\'][\''+value_col+'\']\n\n\n';
+handle = client['+value_db+']['+value_col+']\n\n\n';
   return code;
 };
 
@@ -63,3 +63,28 @@ body = json.loads(text)\n\n';
   return code;
 };
 
+python.pythonGenerator.forBlock['searchquery'] = function(block, generator) {
+  var value_indexname = generator.valueToCode(block, 'indexName', python.Order.ATOMIC);
+  var value_querystring = generator.valueToCode(block, 'queryString', python.Order.ATOMIC);
+  var value_path = generator.valueToCode(block, 'path', python.Order.ATOMIC);
+  // TODO: Assemble python into code variable.
+  var code = '############################\n# MAKE A SEARCH \n############################\n\
+pipeline = [\n\
+  {\n\
+      \'$search\': {\n\
+          \'index\': '+value_indexname+', \n\
+          \'text\': { \n\
+              \'query\': '+value_querystring+',\n\
+              \'path\': '+value_path+'\n\
+          \}\n\
+      }\n\
+  }, {\n\
+    \'$limit\':10 \n\
+  }\n\
+]\n\n\
+result = handle.aggregate(pipeline)\n\n\
+print("Search Results")\n\
+for doc in result:\n\
+  print(doc)\n\n\n';
+  return code;
+};

@@ -84,4 +84,33 @@
   "colour": 0,
   "tooltip": "",
   "helpUrl": ""
+},
+{
+  "type": "searchquery",
+  "message0": "Atlas Search Query %1 Index Name %2 Query %3 Path to Search %4",
+  "args0": [
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "indexName",
+      "check": "String"
+    },
+    {
+      "type": "input_value",
+      "name": "queryString",
+      "check": "String"
+    },
+    {
+      "type": "input_value",
+      "name": "path",
+      "check": "Array"
+    }
+  ],
+  "previousStatement": null,
+  "nextStatement": null,
+  "colour": 315,
+  "tooltip": "",
+  "helpUrl": ""
 }]
